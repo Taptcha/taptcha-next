@@ -1,11 +1,12 @@
-import puzzleObject from "../../../lib/store/puzzleObject";
-import tokenObject from "../../../lib/store/tokenObject";
+import path from "path";
+import getConfig from "next/config";
+const { serverRuntimeConfig } = getConfig();
 import randomString from "../../../lib/randomString";
 import ttl from "../../../lib/ttl";
 
 export default function generateToken(req, res) {
-  const puzzleCache = ttl(puzzleObject);
-  const tokenCache = ttl(tokenObject);
+  const puzzleCache = ttl(path.join(serverRuntimeConfig.root, "./lib/store/puzzleObject.json"));
+  const tokenCache = ttl(path.join(serverRuntimeConfig.root, "./lib/store/tokenObject.json"));
 
   const { puzzle, answer } = req.query;
 
