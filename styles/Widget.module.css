@@ -1,0 +1,66 @@
+.taptchaBox, .taptchaBox * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: sans-serif;
+}
+
+.taptchaBox {
+  width: 250px;
+  height: 60px;
+  background: #F0F0F0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  position: relative;
+}
+
+.taptchaCheck {
+  height: 30px;
+  width: 30px;
+  background: #181818;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.taptchaBox p {
+  font-size: 14px;
+}
+
+.taptchaBox > p {
+  margin-left: 14px;
+}
+
+@keyframes taptcha-loading {
+  from {
+    transform: rotate(0deg) scale(0.8);
+  }
+
+  to {
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+
+.taptchaLoading {
+  animation: taptcha-loading 1s infinite;
+}
+
+p.taptchaBranding {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  color: grey;
+  font-size: 10px;
+  text-align: right;
+}
+
+p.taptchaError {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: #ff4242;
+  font-size: 10px;
+  text-align: right;
+}
